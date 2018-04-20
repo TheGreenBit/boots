@@ -4,6 +4,7 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,6 +15,7 @@ import java.util.Arrays;
 @ComponentScan(value = {"com.bird"})
 @EnableElasticsearchRepositories(basePackages = {"com.bird.elasticsearch"})
 @SpringBootApplication
+@EnableCaching
 public class OriginApplication {
 
 	public static void main(String[] args) {

@@ -16,6 +16,7 @@ public class JdbcController {
     @PostMapping("save/phrase")
     public void saveChatPhrase(@RequestBody ChatPhrase chatPhrase) {
         chatPhraseService.saveChatPhrase(chatPhrase);
+
     }
 
     @GetMapping("show/phrase")

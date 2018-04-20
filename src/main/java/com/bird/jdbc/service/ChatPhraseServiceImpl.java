@@ -29,7 +29,6 @@ public class ChatPhraseServiceImpl implements ChatPhraseService{
     @Override
     public void saveChatPhrase(ChatPhrase chatPhrase) {
         String s = objToInsertSql(chatPhrase);
-        System.out.println("=========================={"+s+"}================");
         jdbcTemplate.execute(s);
     }
 
