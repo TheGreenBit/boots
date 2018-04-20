@@ -1,0 +1,15 @@
+bird:
+  name: crane
+  age: 25
+  weight: 6.6
+  gender: man
+  height: 76.88
+  secret: ${random.value}
+dolphin:
+  name: swift
+  age: 33
+  weight: 8.8
+  gender: man
+  height: 23.6
+  secret: ${random.value}
+  like: swimming
