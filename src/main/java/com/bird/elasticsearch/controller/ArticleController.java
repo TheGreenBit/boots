@@ -2,10 +2,14 @@ package com.bird.elasticsearch.controller;
 
 import com.bird.elasticsearch.beans.Article;
 import com.bird.elasticsearch.repository.ArticleService;
+import com.bird.springboot.tbeans.ArticleHolder;
+import com.bird.utils.ExtractParameterUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class ArticleController {
@@ -24,6 +28,12 @@ public class ArticleController {
     @PostMapping("publish")
     public void publish(@RequestBody Article article) {
         articleService.publishArticle(article);
+    }
+
+    @PostMapping("convert")
+    public void convert(HttpServletRequest req) throws Exception {
+        ArticleHolder articleHolder = ExtractParameterUtils.extractFromHttpRequest(ArticleHolder.class, req);
+        articleService.publishArticle(articleHolder.getArticle());
     }
 
     @PostMapping("delete")
