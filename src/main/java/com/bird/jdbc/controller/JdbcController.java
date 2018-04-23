@@ -10,17 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class JdbcController {
+
     @Autowired
     private ChatPhraseService chatPhraseService;
 
     @PostMapping("save/phrase")
     public void saveChatPhrase(@RequestBody ChatPhrase chatPhrase) {
         chatPhraseService.saveChatPhrase(chatPhrase);
-
     }
 
     @GetMapping("show/phrase")
     public String showPhrase() {
         return chatPhraseService.getChatPhrase().toString();
     }
+
+
 }

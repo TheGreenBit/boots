@@ -1,7 +1,7 @@
 package com.bird.elasticsearch.service;
 
 import com.bird.elasticsearch.beans.Article;
-import com.bird.elasticsearch.repository.ArticleService;
+import com.bird.elasticsearch.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

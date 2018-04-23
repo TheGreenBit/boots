@@ -1,4 +1,4 @@
-package com.bird.elasticsearch.service;
+package com.bird.elasticsearch.repository;
 
 import com.bird.elasticsearch.beans.Article;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;

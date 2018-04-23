@@ -12,8 +12,7 @@ public class OriginApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		Assumptions.assumeThat("bird")
-				.contains("ir");
+		Assumptions.assumeThat("bird").contains("ir");
 	}
 
 
