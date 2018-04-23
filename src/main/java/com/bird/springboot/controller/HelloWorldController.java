@@ -25,6 +25,10 @@ public class HelloWorldController {
         return article.toString();
     }
 
+    @Autowired
+    private NamedBean namedBean;
+
+
     @GetMapping("hello")
     public String helloworld() {
         return "Hello World!";
