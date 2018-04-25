@@ -2,6 +2,7 @@ package com.bird.springboot.controller;
 
 import com.bird.config.Bird;
 import com.bird.config.ConfigDolphin;
+import com.bird.config.NamedBean;
 import com.bird.elasticsearch.beans.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

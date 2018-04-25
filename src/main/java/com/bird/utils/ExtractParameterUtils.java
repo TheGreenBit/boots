@@ -2,6 +2,7 @@ package com.bird.utils;
 
 import org.springframework.beans.SimpleTypeConverter;
 import org.springframework.beans.TypeConverter;
+import org.springframework.lang.Nullable;
 
 import javax.servlet.http.HttpServletRequest;
 import java.beans.BeanInfo;
@@ -12,6 +13,7 @@ import java.util.Enumeration;
 
 public class ExtractParameterUtils {
 
+    @Nullable
     public static <T> T extractFromHttpRequest(Class<T> tClass, HttpServletRequest httpServletRequest) throws Exception {
         BeanInfo beanInfo = Introspector.getBeanInfo(tClass);
         PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();

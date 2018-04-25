@@ -1,7 +1,5 @@
 package com.bird.springboot.origin;
 
-import com.bird.config.Bird;
-import com.bird.elasticsearch.beans.Article;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +10,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 import java.util.Arrays;
+import java.util.Spliterator;
+import java.util.Spliterators;
 
 @ComponentScan(value = {"com.bird"})
 @EnableElasticsearchRepositories(basePackages = {"com.bird.elasticsearch.repository"})
@@ -24,6 +24,7 @@ public class OriginApplication {
         System.setProperty("es.set.netty.runtime.available.processors", "false");
 		SpringApplication.run(OriginApplication.class, args);
         System.out.println("end ..................................................");
+
     }
 
     @Bean
