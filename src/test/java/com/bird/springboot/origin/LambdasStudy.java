@@ -98,13 +98,12 @@ public class LambdasStudy {
     @Test
     public void customStringColl() {
         Random random = new Random();
-        Map<Integer,Integer> current = new HashMap<Integer,Integer>();
+        Map<Integer, Integer> current = new HashMap<Integer, Integer>();
 
 
-
-        for (int i = 1;i<20;i++) {
+        for (int i = 1; i < 20; i++) {
             int i1 = random.nextInt(25);
-            System.out.println(i+"\t"+map.computeIfAbsent(i,v->v<1?0:1));
+            System.out.println(i + "\t" + map.computeIfAbsent(i, v -> v < 1 ? 0 : 1));
         }
     }
 
@@ -162,7 +161,7 @@ public class LambdasStudy {
     public void initArray() {
         double[] doubles = new double[8];
         final int[] l = {0};
-        Arrays.stream(doubles).forEach(a->{
+        Arrays.stream(doubles).forEach(a -> {
             doubles[l[0]++] = l[0];
         });
         System.out.println(Arrays.toString(doubles));
