@@ -20,17 +20,14 @@ import java.util.Spliterators;
 public class OriginApplication {
 
 	public static void main(String[] args) {
-        System.out.println("begin ..................................................");
         System.setProperty("es.set.netty.runtime.available.processors", "false");
 		SpringApplication.run(OriginApplication.class, args);
-        System.out.println("end ..................................................");
-
     }
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext applicationContext) {
         return args -> {
-           Arrays.stream(applicationContext.getBeanDefinitionNames()).sorted().forEach((a)->{System.out.println(a);});
+           Arrays.stream(applicationContext.getBeanDefinitionNames()).sorted().forEach((a)->System.out.println(a));
        };
     }
 

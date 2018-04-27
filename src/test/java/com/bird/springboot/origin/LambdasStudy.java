@@ -2,17 +2,11 @@ package com.bird.springboot.origin;
 
 import com.bird.config.Album;
 import com.bird.config.Musician;
-import com.carrotsearch.hppc.IntIntHashMap;
-import com.carrotsearch.hppc.IntIntMap;
-import javafx.util.Pair;
-import javafx.util.StringConverter;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -41,9 +35,10 @@ public class LambdasStudy {
 
     @Test
     public void streamTest() {
-        albums.stream().filter(a -> a.getMinutes() > 52).
-                sorted(comparing(a -> a.getTitle()))
-                .map(a -> a.getAuthor()).forEach(a -> System.out.println(a));
+        albums.stream().filter(a -> a.getMinutes() > 52)
+                .sorted(comparing(a -> a.getTitle()))
+                .map(a -> a.getAuthor())
+                .forEach(a -> System.out.println(a));
     }
 
     @Test
@@ -130,7 +125,6 @@ public class LambdasStudy {
 
     public <R> R go(R origin, Recursion<R> recursion) {
         return recursion.recursion(origin);
-
     }
 
     @FunctionalInterface

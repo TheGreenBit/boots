@@ -1,4 +1,4 @@
 package com.bird.elasticsearch.service;
 
-public interface ElasticsearchService {
+public interface ElasticSearchService {
 }
