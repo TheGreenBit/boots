@@ -5,6 +5,8 @@ import com.bird.config.Musician;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -192,5 +194,23 @@ public class LambdasStudy {
             this.result = result;
             return this;
         }
+    }
+
+    @Test
+    public void testStaticInvoke() throws InvocationTargetException, IllegalAccessException {
+        Method[] declaredMethods = this.getClass().getDeclaredMethods();
+        Optional<Method> print = Arrays.stream(declaredMethods).filter(method -> method.getName().equalsIgnoreCase("printD")).findFirst();
+        if(print.isPresent()) {
+            //print.get().invoke(LambdasStudy.class,17,78.9);
+            print.get().invoke(this,17,78.9);
+        }
+    }
+
+    public static void print(int a,double v){
+        System.out.println(a+v);
+    }
+
+    public void printD(int a,double v){
+        System.out.println(a+v);
     }
 }

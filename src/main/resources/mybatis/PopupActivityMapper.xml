@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bird.mybatis.dao.PopupActivityMapper">
+    <resultMap id="BaseResultMap" type="com.bird.mybatis.model.PopupActivity">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="popupId" jdbcType="INTEGER" property="popupId"/>
+        <result column="button" jdbcType="VARCHAR" property="button"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="imageUrl" jdbcType="VARCHAR" property="imageUrl"/>
+        <result column="state" jdbcType="TINYINT" property="state"/>
+        <result column="activityName" jdbcType="VARCHAR" property="activityName"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="times" jdbcType="VARCHAR" property="times"/>
+    </resultMap>
+    <select id="getCurrentActivityPopup" resultType="com.bird.mybatis.model.PopupActivity">
+        SELECT a.*
+         FROM b_popup_date_range d INNER JOIN b_popup_activity a
+        ON d.popupId=a.popupId
+        <!--LEFT JOIN b_popup_user_hits h ON a.popupId=h.popupId AND h.userId=#{userId} AND h.date=#{currentDay}
+         WHERE d.beginTime &lt;= now()
+         AND d.endTime &gt;=now()
+-->
+         where a.state=#{state}
+         limit 1
+    </select>
+    <select id="checkIsJoin" resultType="java.lang.Integer">
+        SELECT 1 FROM b_popup_activity_share
+        WHERE userId = #{userId}
+        limit 1
+    </select>
+
+
+</mapper>
