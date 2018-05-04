@@ -1,7 +1,7 @@
 package com.bird.elasticsearch.repository;
 
-import com.bird.elasticsearch.beans.Goods;
+import com.bird.elasticsearch.beans.GoodsData;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-public interface GoodsRepository extends ElasticsearchRepository<Goods,Long>{
+public interface GoodsRepository extends ElasticsearchRepository<GoodsData,Long>{
 }
